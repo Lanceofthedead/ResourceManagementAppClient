@@ -1,0 +1,65 @@
+<div>
+  <form (ngSubmit)="processForm(employeeForm)" #employeeForm="ngForm" class="example-form">
+    <div id="employeeData">
+
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput type="text" name="firstName" [(ngModel)]="employee.firstName" placeholder="First Name" required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput type="text" name="lastName" [(ngModel)]="employee.lastName" placeholder="Last Name" required>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput type="text" name="email" [(ngModel)]="employee.email" placeholder="Email" email #email="ngModel" required>
+          <span *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="example-full-width">
+          <input matInput type="text" name="phoneNumber" [(ngModel)]="employee.phoneNumber" placeholder="Phone Number"
+            pattern="[0-9]+" minlength=10 maxlength=11 required>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div id="positionData" ngModelGroup=position>
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="Job Title" [(ngModel)]="employee.position" [ngModelOptions]="{standalone: true}">
+          <mat-option *ngFor="let position of positions" [value]="position">
+            {{position.jobTitle}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div id="projectData" ngModelGroup="projects">
+      <mat-form-field class="example-full-width">
+        <!-- <mat-label style="color: black">Projects</mat-label> -->
+        <mat-select placeholder="Projects" multiple [(ngModel)]="employee.projects" [ngModelOptions]="{standalone: true}"
+          style="color:black">
+          <mat-option *ngFor="let project of projects" [value]="project">
+            {{project.projectName}} ({{project.clientName}})</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button mat-raised-button color="accent" type="submit">Submit</button>
+      <!-- <button mat-raised-button color="accent" type="submit" [disabled]="!employeeForm.valid">Submit</button> -->
+    </div>
+
+    <div>
+      {{employee | json}}
+    </div>
+
+
+
+  </form>
+</div>

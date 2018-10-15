@@ -1,0 +1,27 @@
+
+  <div>
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Job Title</th>
+      <th></th>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor = "let position of positions">
+      <td>{{ position.positionId }}</td>
+      <td>{{ position.jobTitle }}</td>
+      <td>
+         <button mat-raised-button color="accent"
+            (click)= "updatePosition(position)">Edit</button>
+            <button mat-raised-button  color="warn"
+            (click)= "deletePosition(position)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div style="text-align:center;">
+  <button mat-raised-button color="primary"
+  (click)="newPosition()">New position</button>
+</div>
+</div>

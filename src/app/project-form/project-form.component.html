@@ -1,0 +1,31 @@
+<div>
+  <form (ngSubmit)="processForm()" #projectForm="ngForm" class="example-form">
+    <div id="projectData">
+    
+
+      <div>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Project Name" type="text" name="projectName"
+            [(ngModel)]="project.projectName">
+          </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Client Name" type="text" name="clientName"
+              [(ngModel)]="project.clientName">
+            </mat-form-field>
+          </div>
+    </div>
+
+    
+    <div>
+        <button mat-raised-button color="accent" type="submit">Submit</button>
+      </div>
+  
+      <div>
+          {{project | json}}
+        </div>
+
+  </form>
+</div>

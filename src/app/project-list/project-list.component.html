@@ -1,0 +1,29 @@
+<div>
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Project Name</th>
+      <th>Client Name</th>
+      <th></th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor = "let project of projects">
+      <td>{{ project.projectId }}</td>
+      <td>{{ project.projectName }}</td>
+      <td>{{ project.clientName }}</td>
+      
+      <td>
+         <button mat-raised-button  color="accent"
+            (click)= "updateProject(project)">Edit</button>
+            <button mat-raised-button  color="warn"
+            (click)= "deleteProject(project)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div style="text-align:center;">
+  <button mat-raised-button color="primary"
+  (click)="newProject()">New project</button>
+</div>
+</div>

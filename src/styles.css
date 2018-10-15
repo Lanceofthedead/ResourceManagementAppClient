@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* @import "~bootstrap/dist/css/bootstrap.css"; */
+
+body {  
+    /* background: lightslategray;   */
+    margin: 0;    
+    font-family: Roboto, sans-serif;  
+    /* color: white;   */
+}   
+.mat-tab-label, .mat-tab-link {
+    color: black;
+    font-weight: 600;
+  }
+/* 
+  mat-card {    
+    max-width: 80%;    
+    margin: 2em auto;    
+    text-align: center;    
+} */
+
+nav {
+    position: absolute;
+    left: 0px;
+    height: 60px;
+    /* background-color:purple; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+  table {
+    width: 100%;
+    border-collapse:collapse;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-left:auto;
+    margin-right:auto; 
+    text-align: center;
+    table-layout:fixed
+  }
+
+td, th {
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+    
+}
+  
+.example-form {
+    min-width: 150px;
+    max-width: 600px;
+    width: 70%;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+  button {
+    display: flex; justify-content: center;
+  }
+
+ 
+  /* input.ng-invalid.ng-touched{
+    border: 1px solid red;
+  } */
+

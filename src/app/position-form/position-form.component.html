@@ -1,0 +1,26 @@
+<div>
+  <form (ngSubmit)="processForm()" #positionForm="ngForm" class="example-form">
+    <div id="positionData">
+      
+
+      <div>
+          <mat-form-field class="example-full-width">
+            <!-- <mat-label style="color:black">Job Title</mat-label> -->
+            <input matInput placeholder="Job Title" type="text" name="jobTitle" 
+            [(ngModel)]="position.jobTitle"
+            >
+          </mat-form-field>
+        </div>
+    </div>
+
+    <div>
+        <button mat-raised-button color="accent" type="submit">Submit</button>
+        <!-- <button mat-raised-button color="accent" type="submit" [disabled]="!employeeForm.valid">Submit</button> -->
+      </div>
+  
+      <div>
+          {{position | json}}
+        </div>
+
+  </form>
+</div>
